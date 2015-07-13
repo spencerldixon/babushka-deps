@@ -1,7 +1,10 @@
-# Install everything for the work environment as well as personal stuff for fun
+# Install everything for the play environment
 
-dep "work" do
+dep "play" do
   requires "all-packaged-apps"
   requires "all-osx-apps"
   requires "all-osx-settings"
+  requires "install-fonts"
+  requires "install-ruby-and-dependencies"
+  requires "heroku-setup"
 end

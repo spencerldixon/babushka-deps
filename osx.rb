@@ -29,8 +29,8 @@ dep "Spotify.app" do
 end
 
 dep "Xcode.app" do
-  met? { "/Applications/Todoist.app".p.exist? }
-  meet { unmeetable! "Install Todoist via the App Store." }
+  met? { "/Applications/Xcode.app".p.exist? }
+  meet { unmeetable! "Install Xcode via the App Store." }
 end
 
 dep "Todoist.app" do
@@ -109,13 +109,15 @@ dep "set-icon-size" do
   met? {
     shell("defaults read com.apple.dock tilesize") == "41"
   }
-   
+
   meet {
     shell("defaults write com.apple.dock tilesize -int 41")
     shell("killall -HUP Dock")
   }
 end
- 
+
+# Install everything...
+
 dep "all-osx-settings" do
   requires "set-icon-size"
-end 
+end
