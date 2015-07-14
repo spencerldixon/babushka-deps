@@ -5,7 +5,8 @@ dep "iTerm.app" do
 end
 
 dep "Dropbox.app" do
-  source "https://www.dropbox.com/download?plat=mac"
+  met? { "/Applications/Dropbox.app".p.exist? }
+  meet { unmeetable! "Install Dropbox via the App Store." }
 end
 
 dep "Slack.app" do
@@ -75,8 +76,8 @@ dep "Atom.app" do
   source "https://atom.io/download/mac"
 end
 
-dep "VirtualBox.app" do
-  source "http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg"
+dep "Time Out.app" do
+  source "http://www.dejal.com/download/?prod=timeout&vers=1.7.1&lang=en&op=getnow&ref=timeout"
 end
 
 # Install everything...
@@ -100,5 +101,5 @@ dep "all-osx-apps" do
   requires "GIMP.app"
   requires "Evernote.app"
   requires "Atom.app"
-  requires "VirtualBox.app"
+  requires "Time Out.app"
 end
