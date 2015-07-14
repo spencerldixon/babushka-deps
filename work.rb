@@ -7,4 +7,6 @@ dep "work" do
   requires "install-fonts"
   requires "install-ruby-and-dependencies"
   requires "heroku-setup"
+  requires "install-scm-breeze"
+  requires "install-dotfiles"
 end

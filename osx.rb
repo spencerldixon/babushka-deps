@@ -102,22 +102,3 @@ dep "all-osx-apps" do
   requires "Atom.app"
   requires "VirtualBox.app"
 end
-
-# OS X Settings
-
-dep "set-icon-size" do
-  met? {
-    shell("defaults read com.apple.dock tilesize") == "41"
-  }
-
-  meet {
-    shell("defaults write com.apple.dock tilesize -int 41")
-    shell("killall -HUP Dock")
-  }
-end
-
-# Install everything...
-
-dep "all-osx-settings" do
-  requires "set-icon-size"
-end
