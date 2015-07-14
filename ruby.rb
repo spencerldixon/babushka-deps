@@ -23,7 +23,7 @@ end
 
 dep "install-brew" do
   met? { shell? "brew help" }
-  meet { shell "ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'" }
+  meet { shell 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' }
 end
 
 # Install Ruby with RVM
