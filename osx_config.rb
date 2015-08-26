@@ -23,6 +23,13 @@ dep "set-dark-mode" do
   meet { shell "defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleInterfaceStyle -string Dark" }
 end
 
+dep "set-background" do
+  meet {
+    shell "curl -o ~/Pictures/elliot.jpg http://imgh.us/elliotswallpaper.jpg"
+    shell "sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db \"update data set value = '~/Pictures/elliotswallpaper.jpg'\" && killall Dock  "
+  }
+end
+
 # Install everything...
 
 dep "all-osx-settings" do
@@ -30,4 +37,5 @@ dep "all-osx-settings" do
   requires "set-keyrepeat"
   requires "set-initial-key-repeat"
   requires "set-dark-mode"
+  requires "set-background"
 end

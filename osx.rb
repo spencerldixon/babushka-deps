@@ -80,6 +80,18 @@ dep "Time Out.app" do
   source "http://www.dejal.com/download/?prod=timeout&vers=1.7.1&lang=en&op=getnow&ref=timeout"
 end
 
+dep "VeraCrypt.app" do
+  met? { "/Applications/VeraCrypt.app".p.exist? }
+  meet {
+    source "http://sourceforge.net/projects/osxfuse/files/osxfuse-2.8.0/osxfuse-2.8.0.dmg/download"
+    source "https://veracrypt.codeplex.com/downloads/get/1468025"
+  }
+end
+
+dep "Backblaze.app" do
+  source "https://www.backblaze.com/mac/install_backblaze.dmg"
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
@@ -102,4 +114,6 @@ dep "all-osx-apps" do
   requires "Evernote.app"
   requires "Atom.app"
   requires "Time Out.app"
+  requires "VeraCrypt.app"
+  requires "Backblaze.app"
 end
