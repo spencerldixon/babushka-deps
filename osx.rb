@@ -92,6 +92,15 @@ dep "Backblaze.app" do
   source "https://www.backblaze.com/mac/install_backblaze.dmg"
 end
 
+dep "Sync.app" do
+  source "https://www.sync.com/download/apple/Sync.dmg"
+end
+
+dep "FasttrackDrivers" do
+  met? { false }
+  meet { source "http://akmedia.digidesign.com/support/compressed/Fast_Track_Pro_Driver_1_9_5_Mac_83635.dmg?ns=1" }
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
@@ -116,4 +125,6 @@ dep "all-osx-apps" do
   requires "Time Out.app"
   requires "VeraCrypt.app"
   requires "Backblaze.app"
+  requires "Sync.app"
+  requires "FasttrackDrivers"
 end
