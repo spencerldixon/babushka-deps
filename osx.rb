@@ -88,10 +88,6 @@ dep "VeraCrypt.app" do
   }
 end
 
-dep "Backblaze.app" do
-  source "https://www.backblaze.com/mac/install_backblaze.dmg"
-end
-
 dep "Sync.app" do
   source "https://www.sync.com/download/apple/Sync.dmg"
 end
@@ -99,6 +95,15 @@ end
 dep "FasttrackDrivers" do
   met? { false }
   meet { source "http://akmedia.digidesign.com/support/compressed/Fast_Track_Pro_Driver_1_9_5_Mac_83635.dmg?ns=1" }
+end
+
+dep "PreyProject" do
+  met? { false }
+  meet { source "https://prey-releases.s3.amazonaws.com/node-client/1.4.1/prey-mac-1.4.1-x86.pkg" }
+end
+
+dep "VirtualBox.app" do
+  source "http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg"
 end
 
 # Install everything...
@@ -127,4 +132,6 @@ dep "all-osx-apps" do
   requires "Backblaze.app"
   requires "Sync.app"
   requires "FasttrackDrivers"
+  requires "PreyProject"
+  requires "VirtualBox.app"
 end
