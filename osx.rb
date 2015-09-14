@@ -106,6 +106,14 @@ dep "VirtualBox.app" do
   source "http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg"
 end
 
+dep "Transmission.app" do
+  source "http://download.transmissionbt.com/files/Transmission-2.84.dmg"
+end
+
+dep "VLC.app" do
+  source "http://get.videolan.org/vlc/2.2.1/macosx/vlc-2.2.1.dmg"
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
@@ -129,9 +137,10 @@ dep "all-osx-apps" do
   requires "Atom.app"
   requires "Time Out.app"
   requires "VeraCrypt.app"
-  requires "Backblaze.app"
   requires "Sync.app"
   requires "FasttrackDrivers"
   requires "PreyProject"
   requires "VirtualBox.app"
+  requires "Transmission.app"
+  requires "VLC.app"
 end
