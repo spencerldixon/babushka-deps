@@ -30,6 +30,14 @@ dep "set-background" do
   }
 end
 
+#dep "enable-firewall" do
+  #met? {}
+  #meet {
+    #shell "defaults write /Library/Preferences/com.apple.alf globalstate -int 1"
+
+#end
+
+
 # Install everything...
 
 dep "all-osx-settings" do
