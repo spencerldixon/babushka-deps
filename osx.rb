@@ -114,6 +114,10 @@ dep "VLC.app" do
   source "http://get.videolan.org/vlc/2.2.1/macosx/vlc-2.2.1.dmg"
 end
 
+dep "Messenger.app" do
+  source "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger.dmg"
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
@@ -143,4 +147,5 @@ dep "all-osx-apps" do
   requires "VirtualBox.app"
   requires "Transmission.app"
   requires "VLC.app"
+  requires "Messenger.app"
 end
