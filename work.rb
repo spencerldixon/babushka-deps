@@ -9,4 +9,5 @@ dep "work" do
   requires "heroku-setup"
   requires "install-scm-breeze"
   requires "install-dotfiles"
+  requires "finished-messages"
 end
