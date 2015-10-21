@@ -118,9 +118,8 @@ dep "Messenger.app" do
   source "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger.dmg"
 end
 
-dep "ActivityTimer.app" do
-  met? { "Applications/ActivityTimer.app".p.exist? }
-  meet { unmeetable! "Install ActivityTimer via the App Store" }
+dep "Pomodone.app" do
+  source "http://app.pomodoneapp.com/PomoDone.dmg"
 end
 
 # Install everything...
