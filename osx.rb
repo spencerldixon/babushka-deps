@@ -118,7 +118,7 @@ dep "Messenger.app" do
   source "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger.dmg"
 end
 
-dep "Pomodone.app" do
+dep "PomoDone.app" do
   source "http://app.pomodoneapp.com/PomoDone.dmg"
 end
 
@@ -152,5 +152,5 @@ dep "all-osx-apps" do
   requires "Transmission.app"
   requires "VLC.app"
   requires "Messenger.app"
-  requires "ActivityTimer.app"
+  requires "PomoDone.app"
 end
