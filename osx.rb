@@ -103,7 +103,7 @@ dep "PreyProject" do
 end
 
 dep "VirtualBox.app" do
-  source "http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg"
+  source "http://download.virtualbox.org/virtualbox/5.0.8/VirtualBox-5.0.8-103449-OSX.dmg"
 end
 
 dep "Transmission.app" do
@@ -120,6 +120,11 @@ end
 
 dep "PomoDone.app" do
   source "http://app.pomodoneapp.com/PomoDone.dmg"
+end
+
+dep "HerokuToolbelt" do
+  met? { false }
+  meet { source "https://toolbelt.heroku.com/download/osx" }
 end
 
 # Install everything...
@@ -153,4 +158,5 @@ dep "all-osx-apps" do
   requires "VLC.app"
   requires "Messenger.app"
   requires "PomoDone.app"
+  requires "HerokuToolbelt"
 end
