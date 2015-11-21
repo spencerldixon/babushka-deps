@@ -16,4 +16,6 @@ or...
 
 Which will install some personal applications too as well as everything work
 
+## Security
 
+Security guide can be found at ```https://github.com/drduh/OS-X-Security-and-Privacy-Guide```

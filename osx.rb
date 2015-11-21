@@ -127,6 +127,15 @@ dep "HerokuToolbelt" do
   meet { source "https://toolbelt.heroku.com/download/osx" }
 end
 
+dep "DNSCrypt Menubar.app" do
+  source "https://github.com/alterstep/dnscrypt-osxclient/releases/download/1.0.10/dnscrypt-osxclient-1.0.10.dmg"
+end
+
+dep "SpoofMac" do
+  met? { false }
+  meet { shell('pip install SpoofMAC') }
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
@@ -159,4 +168,6 @@ dep "all-osx-apps" do
   requires "Messenger.app"
   requires "PomoDone.app"
   requires "HerokuToolbelt"
+  requires "DNSCrypt Menubar.app"
+  requires "SpoofMac"
 end

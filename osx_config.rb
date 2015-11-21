@@ -30,12 +30,37 @@ dep "set-background" do
   }
 end
 
-#dep "enable-firewall" do
-  #met? {}
-  #meet {
-    #shell "defaults write /Library/Preferences/com.apple.alf globalstate -int 1"
+dep "evict-filevault" do
+  # Evict Filevault keys from memory for security
+  meet {
+    shell "sudo pmset -a destroyfvkeyonstandby 1"
+    shell "sudo pmset -a hibernatemode 25"
+  }
+end
 
-#end
+dep "enable-firewall" do
+  # Enable firewall, logging, stealth mode and disable access for signed software"
+  meet {
+    shell "sudo defaults write /Library/Preferences/com.apple.alf globalstate -bool true"
+    shell "sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -bool true"
+    shell "sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true"
+    shell "sudo defaults write /Library/Preferences/com.apple.alf allowsignedenabled -bool false"
+  }
+end
+
+dep "disable-captive-portal" do
+  # Can be leveraged for potential attack
+  meet {
+    shell "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false"
+  }
+end
+
+dep "disable-save-to-icloud" do
+  # Disable saving files to iCloud by default
+  meet {
+    shell "defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false"
+  }
+end
 
 
 # Install everything...
@@ -46,4 +71,7 @@ dep "all-osx-settings" do
   requires "set-initial-key-repeat"
   requires "set-dark-mode"
   requires "set-background"
+  requries "evict-filevault"
+  requires "enable-firewall"
+  requires "disable-save-to-icloud"
 end
