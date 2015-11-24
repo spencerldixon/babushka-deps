@@ -20,6 +20,10 @@ dep "openssl.bin" do
   installs { via :brew, "openssl" }
 end
 
+dep "tree.bin" do
+  installs { via :brew, "tree" }
+end
+
 # Install everything
 
 dep "all-packaged-apps" do
@@ -28,4 +32,5 @@ dep "all-packaged-apps" do
   requires "tmux.bin"
   requires "archey.bin"
   requires "openssl.bin"
+  requires "tree.bin"
 end
