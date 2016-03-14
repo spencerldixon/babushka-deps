@@ -6,6 +6,11 @@ dep "install-vundle-for-vim" do
   }
 end
 
+dep "install-tpm" do
+  met? { false }
+  meet { shell "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" }
+end
+
 dep "install-dotfiles-from-github" do
   met? { "~/dotfiles".p.dir? }
   meet {
@@ -21,5 +26,6 @@ end
 
 dep "install-dotfiles" do
   requires "install-vundle-for-vim"
+  requires "install-tpm"
   requires "install-dotfiles-from-github"
 end
