@@ -9,6 +9,7 @@ dep "play" do
   requires "heroku-setup"
   requires "install-scm-breeze"
   requires "install-dotfiles"
+  requires "install-zsh"
   requires "personal"
   requires "finished-messages"
 end
