@@ -27,6 +27,11 @@ dep "set-push-default" do
   meet { shell "git config --global push.default simple" }
 end
 
+dep "set-global-gitignore" do
+  met? { false }
+  meet { shell "git config --global core.excludesfile ~/.gitignore_global" }
+end
+
 # Configure git
 
 dep "configure-git" do
@@ -34,4 +39,5 @@ dep "configure-git" do
   requires "set-email"
   requires "set-core-editor"
   requires "set-push-default"
+  requires "set-global-gitignore"
 end
