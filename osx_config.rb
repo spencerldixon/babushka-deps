@@ -71,7 +71,7 @@ dep "all-osx-settings" do
   requires "set-initial-key-repeat"
   requires "set-dark-mode"
   requires "set-background"
-  requries "evict-filevault"
+  requires "evict-filevault"
   requires "enable-firewall"
   requires "disable-save-to-icloud"
 end
