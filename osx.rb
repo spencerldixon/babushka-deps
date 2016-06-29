@@ -92,10 +92,10 @@ dep "Sync.app" do
   source "https://www.sync.com/download/apple/Sync.dmg"
 end
 
-dep "FasttrackDrivers" do
-  met? { false }
-  meet { source "http://akmedia.digidesign.com/support/compressed/Fast_Track_Pro_Driver_1_9_5_Mac_83635.dmg?ns=1" }
-end
+#dep "FasttrackDrivers" do
+#  met? { false }
+#  meet { source "http://akmedia.digidesign.com/support/compressed/Fast_Track_Pro_Driver_1_9_5_Mac_83635.dmg?ns=1" }
+#end
 
 dep "PreyProject" do
   met? { false }
@@ -118,9 +118,9 @@ dep "Messenger.app" do
   source "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger.dmg"
 end
 
-dep "PomoDone.app" do
-  source "http://app.pomodoneapp.com/PomoDone.dmg"
-end
+#dep "PomoDone.app" do
+#  source "http://app.pomodoneapp.com/PomoDone.dmg"
+#end
 
 dep "HerokuToolbelt" do
   met? { false }
@@ -160,13 +160,13 @@ dep "all-osx-apps" do
   requires "Time Out.app"
   requires "VeraCrypt.app"
   requires "Sync.app"
-  requires "FasttrackDrivers"
+  #requires "FasttrackDrivers"
   requires "PreyProject"
   requires "VirtualBox.app"
   requires "Transmission.app"
   requires "VLC.app"
   requires "Messenger.app"
-  requires "PomoDone.app"
+  #requires "PomoDone.app"
   requires "HerokuToolbelt"
   requires "DNSCrypt Menubar.app"
   requires "SpoofMac"
