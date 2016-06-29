@@ -21,10 +21,8 @@ meta 'font' do
       "~/Library/Fonts/#{ttf_filename.first}".p.exists?
     }
     meet {
-      process_sources do
-        Dir.glob("*.tt?") do |font|
-          log_shell "Installing #{font}", "cp #{font} ~/Library/Fonts"
-        end
+      sources.each do |uri|
+        Resource.extract(uri) { Dir.glob("*.tt?"){|font| log_shell("Installing #{font}", "cp #{font} ~/Library/Fonts") } }
       end
     }
   }
