@@ -39,7 +39,7 @@ dep 'menlo for powerline.font' do
 end
 
 dep "install-fonts" do
-  requires 'user font dir exists'
-  requires 'meslo.font'
-  requires 'menlo for powerline.font'
+  #requires 'user font dir exists'
+  #requires 'meslo.font'
+  #requires 'menlo for powerline.font'
 end
