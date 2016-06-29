@@ -132,7 +132,6 @@ dep "DNSCrypt Menubar.app" do
 end
 
 dep "SpoofMac" do
-  met? { false }
   meet { shell('pip install SpoofMAC') }
 end
 
