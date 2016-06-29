@@ -15,7 +15,7 @@ meta 'font' do
   template {
     requires 'user font dir exists'
     prepare {
-      setup_source_uris
+      #setup_source_uris
     }
     met? {
       "~/Library/Fonts/#{ttf_filename.first}".p.exists?
