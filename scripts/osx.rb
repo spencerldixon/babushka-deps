@@ -1,12 +1,13 @@
 # OSX apps go here, Evernote, Slack, Todoist etc...
 
 dep "iTerm.app" do
-  source "https://iterm2.com/downloads/stable/iTerm2-2_1_1.zip"
+  met? { "/Applications/iTerm.app".p.exist? }
+  meet { shell "brew install cask iterm2" }
 end
 
 dep "Dropbox.app" do
   met? { "/Applications/Dropbox.app".p.exist? }
-  meet { unmeetable! "Install Dropbox via the App Store." }
+  meet { shell "brew install cask dropbox" }
 end
 
 dep "Slack.app" do
@@ -14,7 +15,8 @@ dep "Slack.app" do
 end
 
 dep "Flux.app" do
-  source "http://secure.herf.org/flux/Flux.zip"
+  met? { "/Applications/Flux.app".p.exist? }
+  meet { shell "brew install cask flux" }
 end
 
 dep "Firefox.app" do
@@ -40,15 +42,13 @@ dep "Todoist.app" do
 end
 
 dep "Spectacle.app" do
-  source "https://s3.amazonaws.com/spectacle/downloads/Spectacle+0.8.10.zip"
-end
-
-dep "RescueTime.app" do
-  source "https://www.rescuetime.com/installers/RescueTimeInstaller.dmg"
+  met? { "/Applications/Spectacle.app".p.exist? }
+  meet { shell "brew install cask spectacle" }
 end
 
 dep "Postgres.app" do
-  source "https://github.com/PostgresApp/PostgresApp/releases/download/9.4.4.0/Postgres-9.4.4.0.zip"
+  met? { "/Applications/Postgres.app".p.exist? }
+  meet { shell "brew install cask postgres" }
 end
 
 dep "Pocket.app" do
@@ -57,7 +57,8 @@ dep "Pocket.app" do
 end
 
 dep "OpenOffice.app" do
-  source "http://downloads.sourceforge.net/project/openofficeorg.mirror/4.1.1/binaries/en-GB/Apache_OpenOffice_4.1.1_MacOS_x86-64_install_en-GB.dmg?r=&ts=1436539817&use_mirror=freefr"
+  met? { "/Applications/OpenOffice.app".p.exist? }
+  meet { shell "brew install cask openoffice" }
 end
 
 dep "Google Chrome.app" do
@@ -65,26 +66,25 @@ dep "Google Chrome.app" do
 end
 
 dep "GIMP.app" do
-  source "http://download.gimp.org/pub/gimp/v2.8/osx/gimp-2.8.14.dmg"
+  met? { "/Applications/GIMP.app".p.exist? }
+  meet { shell "brew install cask gimp" }
 end
 
 dep "Evernote.app" do
   source "https://evernote.com/download/get.php?file=EvernoteMac"
 end
 
-dep "Atom.app" do
-  source "https://atom.io/download/mac"
-end
-
 dep "Time Out.app" do
-  source "http://www.dejal.com/download/?prod=timeout&vers=1.7.1&lang=en&op=getnow&ref=timeout"
+  met? { "/Applications/Time Out.app".p.exist? }
+  meet { shell "brew install cask time-out" }
 end
 
 dep "VeraCrypt.app" do
   met? { "/Applications/VeraCrypt.app".p.exist? }
   meet {
-    source "http://sourceforge.net/projects/osxfuse/files/osxfuse-2.8.0/osxfuse-2.8.0.dmg/download"
-    source "https://veracrypt.codeplex.com/downloads/get/1468025"
+    shell "brew install cask osxfuse"
+    puts "⚠️  Make sure OSXFuse is installed with MACFuse Compatibility Layer enabled"
+    shell "brew install cask veracrypt"
   }
 end
 
@@ -92,52 +92,63 @@ dep "Sync.app" do
   source "https://www.sync.com/download/apple/Sync.dmg"
 end
 
-#dep "FasttrackDrivers" do
-#  met? { false }
-#  meet { source "http://akmedia.digidesign.com/support/compressed/Fast_Track_Pro_Driver_1_9_5_Mac_83635.dmg?ns=1" }
-#end
-
-#dep "PreyProject" do
-#  met? { false }
-#  meet { source "https://prey-releases.s3.amazonaws.com/node-client/1.4.1/prey-mac-1.4.1-x86.pkg" }
-#end
+dep "PreyProject" do
+  met? { } #TODO - Fill this
+  meet { shell "brew install cask prey" }
+end
 
 dep "VirtualBox.app" do
-  source "http://download.virtualbox.org/virtualbox/5.0.8/VirtualBox-5.0.8-103449-OSX.dmg"
+  met? { "/Applications/VirtualBox.app".p.exist? }
+  meet { shell "brew install cask virtualbox" }
 end
 
 dep "Transmission.app" do
-  source "http://download.transmissionbt.com/files/Transmission-2.84.dmg"
+  met? { "/Applications/Transmission.app".p.exist? }
+  meet { shell "brew install cask transmission" }
 end
 
 dep "VLC.app" do
-  source "http://get.videolan.org/vlc/2.2.1/macosx/vlc-2.2.1.dmg"
+  met? { "/Applications/VLC.app".p.exist? }
+  meet { shell "brew install cask vlc" }
+end
+
+dep "Vivaldi.app" do
+  met? { "/Applications/Vivaldi.app".p.exist? }
+  meet { shell "brew install cask vivaldi" }
 end
 
 dep "Messenger.app" do
-  source "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger.dmg"
+  met? { "/Applications/Messenger.app".p.exist? }
+  meet { shell "brew install cask messenger" }
 end
 
-#dep "PomoDone.app" do
-#  source "http://app.pomodoneapp.com/PomoDone.dmg"
-#end
-
-#dep "HerokuToolbelt" do
-#  met? { false }
-#  meet { source "https://toolbelt.heroku.com/download/osx" }
-#end
+dep "HerokuToolbelt" do
+  source "https://toolbelt.heroku.com/download/osx"
+end
 
 dep "DNSCrypt Menubar.app" do
-  source "https://github.com/alterstep/dnscrypt-osxclient/releases/download/1.0.10/dnscrypt-osxclient-1.0.10.dmg"
+  met? { "/Applications/DNSCrypt Menubar.app".p.exist? }
+  meet { shell "brew install cask dnscrypt" }
 end
 
 dep "SpoofMac" do
   meet { shell('pip install SpoofMAC') }
 end
 
+dep "Backblaze.app" do
+  met? { "/Applications/Backblaze.app".p.exist? }
+  meet { shell "brew install cask backblaze" }
+end
+
+dep "Helium.app" do
+  met? { "/Applications/Helium.app".p.exist? }
+  meet { shell "brew install cask jadengeller-helium" }
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
+  requires "Xcode.app"
   requires "iTerm.app"
   requires "Dropbox.app"
   requires "Slack.app"
@@ -145,28 +156,25 @@ dep "all-osx-apps" do
   requires "Firefox.app"
   requires "Skype.app"
   requires "Spotify.app"
-  requires "Xcode.app"
   requires "Todoist.app"
   requires "Spectacle.app"
-  requires "RescueTime.app"
   requires "Postgres.app"
   requires "Pocket.app"
   requires "OpenOffice.app"
   requires "Google Chrome.app"
   requires "GIMP.app"
   requires "Evernote.app"
-  requires "Atom.app"
   requires "Time Out.app"
   requires "VeraCrypt.app"
   requires "Sync.app"
-  #requires "FasttrackDrivers"
-  #requires "PreyProject"
+  requires "PreyProject"
   requires "VirtualBox.app"
   requires "Transmission.app"
   requires "VLC.app"
   requires "Messenger.app"
-  #requires "PomoDone.app"
-  #requires "HerokuToolbelt"
+  requires "HerokuToolbelt"
   requires "DNSCrypt Menubar.app"
   requires "SpoofMac"
+  requires "Backblaze.app"
+  requires "Helium.app"
 end

@@ -24,6 +24,10 @@ dep "tree.bin" do
   installs { via :brew, "tree" }
 end
 
+dep "python.bin" do
+  installs { via :brew, "python" }
+end
+
 # Install everything
 
 dep "all-packaged-apps" do
@@ -33,4 +37,5 @@ dep "all-packaged-apps" do
   requires "archey.bin"
   requires "openssl.bin"
   requires "tree.bin"
+  requires "python.bin
 end

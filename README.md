@@ -1,10 +1,14 @@
-Babushka set up script for my development environment.
+# Babushka 💃
+### Simple, automated MacBook installation and configuration
 
-Babushka will set up a blank macbook the way I like it; installing ruby, postgres, git, and configuring OSX behaviour and my favourite apps.
+MacBook dead? All that developer config lost? Babushka has your back. Simply connect to the internet, run a few lines of code at the terminal and Babushka sets about downloading all your applications and configuring everything just the way you like it, from Vim and Tmux, to Sync, Slack and Evernote...
 
 To install run:
 
-```sh -c "`curl https://babushka.me/up`"```
+```
+sh -c "`curl https://babushka.me/up`"
+sudo babushka babushka
+```
 
 Then:
 
@@ -14,8 +18,14 @@ or...
 
 ```babushka spencerldixon:play```
 
-Which will install some personal applications too as well as everything work
+Put the kettle on, kick back and wait for Babushka to finish installing everything!
 
 ## Security
 
-Security guide can be found at ```https://github.com/drduh/OS-X-Security-and-Privacy-Guide```
+Security tweaks based on: ```https://github.com/drduh/OS-X-Security-and-Privacy-Guide```
+
+## Babushka Explained
+
+Babushka scripts are contained in the `scripts/` directory and named accordingly. Any osx specific `.app` applications go in the `osx.rb` file. System specific stuff installed with brew go in `apps.rb`
+
+You can rerun the deps and fetch any updates to the repo with the `--update` flag like so: `babushka spencerldixon:deps --update`
