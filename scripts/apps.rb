@@ -37,5 +37,5 @@ dep "all-packaged-apps" do
   requires "archey.bin"
   requires "openssl.bin"
   requires "tree.bin"
-  requires "python.bin
+  requires "python.bin"
 end

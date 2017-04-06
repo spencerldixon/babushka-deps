@@ -1,4 +1,6 @@
 # OS X Settings
+# TODO
+# Set secondary click to bottom right corner
 
 dep "set-icon-size" do
   met? { shell("defaults read com.apple.dock tilesize") == "41" }
