@@ -113,7 +113,7 @@ dep "Messenger.app" do
 end
 
 dep "HerokuToolbelt" do
-  source "https://toolbelt.heroku.com/download/osx"
+  meet { shell "brew install heroku/brew/heroku" }
 end
 
 dep "DNSCrypt Menubar.app" do
