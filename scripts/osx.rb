@@ -87,11 +87,6 @@ dep "Sync.app" do
   source "https://www.sync.com/download/apple/Sync.dmg"
 end
 
-dep "PreyProject" do
-  met? { "/Applications/PreyProject.app".p.exist? }
-  meet { unmeetable! "Install Prey Project via their website: https://preyproject.com" }
-end
-
 dep "VirtualBox.app" do
   met? { "/Applications/VirtualBox.app".p.exist? }
   meet { shell "brew cask install virtualbox" }
@@ -161,7 +156,6 @@ dep "all-osx-apps" do
   requires "Evernote.app"
   requires "VeraCrypt.app"
   requires "Sync.app"
-  requires "PreyProject"
   requires "VirtualBox.app"
   requires "Transmission.app"
   requires "VLC.app"
