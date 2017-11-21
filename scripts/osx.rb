@@ -88,8 +88,8 @@ dep "Sync.app" do
 end
 
 dep "PreyProject" do
-  met? { } #TODO - Fill this
-  meet { shell "brew cask install prey" }
+  met? { "/Applications/PreyProject.app".p.exist? }
+  meet { unmeetable! "Install Prey Project via their website: https://preyproject.com" }
 end
 
 dep "VirtualBox.app" do
