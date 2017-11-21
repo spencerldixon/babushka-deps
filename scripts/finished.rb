@@ -6,9 +6,5 @@ dep "finished-messages" do
   puts "- Configure Firefox with following plugins:"
   puts "\t - AdBlock Plus"
   puts "\t - LastPass"
-  puts "\t - Todoist"
-  puts "\t - RescueTime"
-  puts "\t - Pocket"
-  puts "\t - Evernote Web Clipper"
   puts "----------------------------------------------\n"
 end

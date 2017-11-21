@@ -2,12 +2,12 @@
 
 dep "iTerm.app" do
   met? { "/Applications/iTerm.app".p.exist? }
-  meet { shell "brew install cask iterm2" }
+  meet { shell "brew cask install iterm2" }
 end
 
 dep "Dropbox.app" do
   met? { "/Applications/Dropbox.app".p.exist? }
-  meet { shell "brew install cask dropbox" }
+  meet { shell "brew cask install dropbox" }
 end
 
 dep "Slack.app" do
@@ -16,7 +16,7 @@ end
 
 dep "Flux.app" do
   met? { "/Applications/Flux.app".p.exist? }
-  meet { shell "brew install cask flux" }
+  meet { shell "brew cask install flux" }
 end
 
 dep "Firefox.app" do
@@ -43,12 +43,12 @@ end
 
 dep "Spectacle.app" do
   met? { "/Applications/Spectacle.app".p.exist? }
-  meet { shell "brew install cask spectacle" }
+  meet { shell "brew cask install spectacle" }
 end
 
 dep "Postgres.app" do
   met? { "/Applications/Postgres.app".p.exist? }
-  meet { shell "brew install cask postgres" }
+  meet { shell "brew cask install postgres" }
 end
 
 dep "Pocket.app" do
@@ -58,7 +58,7 @@ end
 
 dep "OpenOffice.app" do
   met? { "/Applications/OpenOffice.app".p.exist? }
-  meet { shell "brew install cask openoffice" }
+  meet { shell "brew cask install openoffice" }
 end
 
 dep "Google Chrome.app" do
@@ -67,24 +67,19 @@ end
 
 dep "GIMP.app" do
   met? { "/Applications/GIMP.app".p.exist? }
-  meet { shell "brew install cask gimp" }
+  meet { shell "brew cask install gimp" }
 end
 
 dep "Evernote.app" do
   source "https://evernote.com/download/get.php?file=EvernoteMac"
 end
 
-dep "Time Out.app" do
-  met? { "/Applications/Time Out.app".p.exist? }
-  meet { shell "brew install cask time-out" }
-end
-
 dep "VeraCrypt.app" do
   met? { "/Applications/VeraCrypt.app".p.exist? }
   meet {
-    shell "brew install cask osxfuse"
+    shell "brew cask install osxfuse"
     puts "⚠️  Make sure OSXFuse is installed with MACFuse Compatibility Layer enabled"
-    shell "brew install cask veracrypt"
+    shell "brew cask install veracrypt"
   }
 end
 
@@ -94,32 +89,32 @@ end
 
 dep "PreyProject" do
   met? { } #TODO - Fill this
-  meet { shell "brew install cask prey" }
+  meet { shell "brew cask install prey" }
 end
 
 dep "VirtualBox.app" do
   met? { "/Applications/VirtualBox.app".p.exist? }
-  meet { shell "brew install cask virtualbox" }
+  meet { shell "brew cask install virtualbox" }
 end
 
 dep "Transmission.app" do
   met? { "/Applications/Transmission.app".p.exist? }
-  meet { shell "brew install cask transmission" }
+  meet { shell "brew cask install transmission" }
 end
 
 dep "VLC.app" do
   met? { "/Applications/VLC.app".p.exist? }
-  meet { shell "brew install cask vlc" }
+  meet { shell "brew cask install vlc" }
 end
 
 dep "Vivaldi.app" do
   met? { "/Applications/Vivaldi.app".p.exist? }
-  meet { shell "brew install cask vivaldi" }
+  meet { shell "brew cask install vivaldi" }
 end
 
 dep "Messenger.app" do
   met? { "/Applications/Messenger.app".p.exist? }
-  meet { shell "brew install cask messenger" }
+  meet { shell "brew cask install messenger" }
 end
 
 dep "HerokuToolbelt" do
@@ -128,7 +123,7 @@ end
 
 dep "DNSCrypt Menubar.app" do
   met? { "/Applications/DNSCrypt Menubar.app".p.exist? }
-  meet { shell "brew install cask dnscrypt" }
+  meet { shell "brew cask install dnscrypt" }
 end
 
 dep "SpoofMac" do
@@ -137,12 +132,12 @@ end
 
 dep "Backblaze.app" do
   met? { "/Applications/Backblaze.app".p.exist? }
-  meet { shell "brew install cask backblaze" }
+  meet { shell "brew cask install backblaze" }
 end
 
 dep "Helium.app" do
   met? { "/Applications/Helium.app".p.exist? }
-  meet { shell "brew install cask jadengeller-helium" }
+  meet { shell "brew cask install jadengeller-helium" }
 end
 
 # Install everything...
@@ -164,7 +159,6 @@ dep "all-osx-apps" do
   requires "Google Chrome.app"
   requires "GIMP.app"
   requires "Evernote.app"
-  requires "Time Out.app"
   requires "VeraCrypt.app"
   requires "Sync.app"
   requires "PreyProject"

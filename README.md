@@ -5,18 +5,16 @@ MacBook dead? All that developer config lost? Babushka has your back. Simply con
 
 To install run:
 
-```
-sh -c "`curl https://babushka.me/up`"
+```sh
+sudo sh -c "`curl https://babushka.me/up`"
 sudo babushka babushka
 ```
 
 Then:
 
-```babushka spencerldixon:work```
-
-or...
-
-```babushka spencerldixon:play```
+```sh
+babushka spencerldixon:run
+```
 
 Put the kettle on, kick back and wait for Babushka to finish installing everything!
 
