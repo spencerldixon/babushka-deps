@@ -1,6 +1,6 @@
 # Install everything for the work environment
 
-dep "work" do
+dep "run" do
   requires "all-packaged-apps"
   requires "all-osx-apps"
   requires "all-osx-settings"
