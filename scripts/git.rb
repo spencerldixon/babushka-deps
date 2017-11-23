@@ -28,7 +28,7 @@ dep "set-push-default" do
 end
 
 dep "set-global-gitignore" do
-  met? { File.exist?("~/.gitignore_global") }
+  met? { !shell("git config --global core.excludesfile").blank? }
   meet { 
     shell("cp ~/.babushka/sources/spencerldixon/gitignore_global.txt ~/.gitignore_global")
     shell("git config --global core.excludesfile ~/.gitignore_global" )
