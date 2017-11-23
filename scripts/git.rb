@@ -23,7 +23,7 @@ dep "set-core-editor" do
 end
 
 dep "set-push-default" do
-  met? { shell("git config push.default") == "simple") }
+  met? { shell("git config push.default") == "simple" }
   meet { shell("git config --global push.default simple") }
 end
 
