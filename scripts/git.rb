@@ -30,7 +30,7 @@ end
 dep "set-global-gitignore" do
   met? { File.exist?("~/.gitignore_global") }
   meet { 
-    shell "cp ~/.babushka/sources/spencerldixon/.gitignore_global ~/.gitignore_global"
+    shell "cp ~/.babushka/sources/spencerldixon/gitignore_global.txt ~/.gitignore_global"
     shell "git config --global core.excludesfile ~/.gitignore_global" 
     }
 end
