@@ -56,22 +56,21 @@ end
 
 dep "install-bundler" do
   met? { shell? "bundler help" }
-  meet { shell "gem install bundler" }
+  meet { shell "sudo gem install bundler" }
 end
 
 # Install Nokogiri
 
 dep "install-nokogiri" do
   met? { shell? "gem list | grep 'nokogiri'" }
-  meet { shell "gem install nokogiri" }
+  meet { shell "sudo gem install nokogiri" }
 end
 
 # Install latest Rails and create gemsets
 
 dep "install-rails" do
-  met? { shell?("rails -v") && shell("rails -v") >= "Rails 4.2.3" }
+  met? { shell?("rails -v") && shell("rails -v") >= "Rails 5.1.0" }
   meet {
-    shell "rvm use ruby-2.2.2@rails4.2 --create"
     shell "gem install rails"
   }
 end
