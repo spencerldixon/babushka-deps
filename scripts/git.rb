@@ -28,8 +28,11 @@ dep "set-push-default" do
 end
 
 dep "set-global-gitignore" do
-  met? { false }
-  meet { shell "git config --global core.excludesfile ~/.gitignore_global" }
+  met? { File.exist?("~/.gitignore_global") }
+  meet { 
+    shell "cp ~/.babushka/sources/.gitignore_global ~/.gitignore_global"
+    shell "git config --global core.excludesfile ~/.gitignore_global" 
+    }
 end
 
 # Configure git
