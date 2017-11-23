@@ -2,7 +2,7 @@
 
 dep "heroku-toolbelt" do
   met? { shell? 'bash -c heroku'}
-  meet { source "https://toolbelt.heroku.com/download/osx" }
+  meet { shell "brew install heroku/brew/heroku" }
 end
 
 # Install heroku
