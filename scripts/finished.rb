@@ -7,5 +7,6 @@ dep "finished-messages" do
   puts "- Configure Firefox with following plugins:"
   puts "\t - AdBlock Plus"
   puts "\t - LastPass"
+  puts "- Install tmux plugins by pressing Prefix (Ctrl + A) and capital I (shift + I)"
   puts "----------------------------------------------\n"
 end
