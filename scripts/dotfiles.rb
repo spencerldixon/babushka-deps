@@ -7,7 +7,7 @@ dep "install-vundle-for-vim" do
 end
 
 dep "install-tpm" do
-  met? { false }
+  met? { "~/.tmux/plugins/tpm".p.dir? }
   meet { shell "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" }
 end
 
