@@ -4,7 +4,7 @@ dep "zsh.bin" do
 end
 
 dep "install-oh-my-zsh" do
-  met? { shell("derp") == "zsh: command not found: derp" }
+  met? { File.exists?(File.expand_path '~/.oh-my-zsh')}
   meet {
     shell "curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh"
     shell "chsh -s /bin/zsh"
