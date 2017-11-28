@@ -5,6 +5,11 @@ dep "iTerm.app" do
   meet { shell "brew cask install iterm2" }
 end
 
+def "SublimeText.app" do
+  met? { "Applications/Sublime Text.app".p.exist? }
+  meet { shell "brew cask install sublime-text" }
+end
+
 dep "Dropbox.app" do
   met? { "/Applications/Dropbox.app".p.exist? }
   meet { shell "brew cask install dropbox" }
@@ -140,6 +145,7 @@ end
 dep "all-osx-apps" do
   requires "Xcode.app"
   requires "iTerm.app"
+  requires "SublimeText.app"
   requires "Dropbox.app"
   requires "Slack.app"
   requires "Flux.app"
