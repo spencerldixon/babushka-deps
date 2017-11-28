@@ -5,7 +5,7 @@ dep "iTerm.app" do
   meet { shell "brew cask install iterm2" }
 end
 
-def "SublimeText.app" do
+dep "SublimeText.app" do
   met? { "/Applications/Sublime Text.app".p.exist? }
   meet { shell "brew cask install sublime-text" }
 end
