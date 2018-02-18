@@ -5,6 +5,11 @@ dep "iTerm.app" do
   meet { shell "brew cask install iterm2" }
 end
 
+dep "sophos_antivirus" do
+  met? { "/Applications/Sophos Home.app".p.exist? }
+  meet { shell "brew cask install sophos-anti-virus-home-edition" }
+end
+
 dep "SublimeText.app" do
   met? { "/Applications/Sublime Text.app".p.exist? }
   meet { shell "brew cask install sublime-text" }
@@ -139,6 +144,7 @@ end
 
 dep "all-osx-apps" do
   requires "Xcode.app"
+  requires "sophos_antivirus"
   requires "iTerm.app"
   requires "SublimeText.app"
   requires "Dropbox.app"
