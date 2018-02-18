@@ -56,11 +56,6 @@ dep "Postgres.app" do
   meet { shell "brew cask install postgres" }
 end
 
-dep "Pocket.app" do
-  met? { "/Applications/Pocket.app".p.exist? }
-  meet { unmeetable! "Install Pocket via the App Store." }
-end
-
 dep "OpenOffice.app" do
   met? { "/Applications/OpenOffice.app".p.exist? }
   meet { shell "brew cask install openoffice" }
