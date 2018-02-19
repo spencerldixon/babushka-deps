@@ -12,8 +12,8 @@ dep "tmux.bin" do
   installs { via :brew, "tmux" }
 end
 
-dep "archey.bin" do
-  installs { via :brew, "archey" }
+dep "yarn.bin" do
+  installs { via :brew, "yarn" }
 end
 
 dep "openssl.bin" do
@@ -34,7 +34,7 @@ dep "all-packaged-apps" do
   requires "vim.bin"
   requires "git.bin"
   requires "tmux.bin"
-  requires "archey.bin"
+  requires "yarn.bin"
   requires "openssl.bin"
   requires "tree.bin"
   requires "python.bin"
