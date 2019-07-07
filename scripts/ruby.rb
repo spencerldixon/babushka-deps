@@ -39,8 +39,8 @@ dep "update-rvm-and-gems" do
   met? { shell?("gem -v") && shell("gem -v") >= "2.4.8" }
   meet {
     shell "rvm get stable --autolibs=enable"
-    shell "rvm install ruby"
-    shell "rvm --default use ruby-2.2.2"
+    shell "rvm install ruby --latest"
+    shell "rvm use --latest --default"
     shell "gem update --system"
   }
 end
@@ -69,7 +69,7 @@ end
 # Install latest Rails and create gemsets
 
 dep "install-rails" do
-  met? { shell?("rails -v") && shell("rails -v") >= "Rails 5.1.0" }
+  met? { shell?("rails -v") && shell("rails -v") >= "Rails 5.2.0" }
   meet {
     shell "gem install rails"
   }
