@@ -4,6 +4,7 @@ dep "finished-messages" do
   puts "\n- Install Prey Project from https://preyproject.com to track your macbook"
   puts "- Enable Filevault encryption on operating system"
   puts "- Enable the OSX Firewall"
+  puts "- Download and install Sophos antivirus"
   puts "- Configure Firefox with following plugins:"
   puts "\t - AdBlock Plus"
   puts "\t - LastPass"
