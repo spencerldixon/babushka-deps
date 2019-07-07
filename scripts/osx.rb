@@ -130,6 +130,10 @@ dep "Helium.app" do
   meet { shell "brew cask install jadengeller-helium" }
 end
 
+dep "ProtonVPN.app" do
+  source "https://protonvpn.com/download/ProtonVPN.dmg"
+end
+
 # Install everything...
 
 dep "all-osx-apps" do
@@ -153,4 +157,5 @@ dep "all-osx-apps" do
   requires "DNSCrypt Menubar.app"
   requires "SpoofMac"
   requires "Helium.app"
+  requires "ProtonVPN.app"
 end
