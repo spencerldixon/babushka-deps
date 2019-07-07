@@ -30,7 +30,7 @@ end
 # end
 
 dep "Firefox.app" do
-  source "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-GB"
+  source "https://download.mozilla.org/?product=firefox-latest-ssl&os=osx&lang=en-GB"
 end
 
 # dep "Skype.app" do
