@@ -35,7 +35,7 @@ end
 
 dep "install-nokogiri" do
   met? { shell? "gem list | grep 'nokogiri'" }
-  meet { shell "sudo gem install nokogiri" }
+  meet { shell "gem install nokogiri" }
 end
 
 # Install latest Rails and create gemsets
