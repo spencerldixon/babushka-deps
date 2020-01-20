@@ -1,4 +1,4 @@
-dep 'user font dir exists' do
+dep 'create fonts directory' do
   met? {
     "~/Library/Fonts".p.dir?
   }
@@ -39,7 +39,7 @@ dep 'menlo for powerline.font' do
 end
 
 dep "install-fonts" do
-  #requires 'user font dir exists'
-  #requires 'meslo.font'
-  #requires 'menlo for powerline.font'
+  requires 'create fonts directory'
+  requires 'meslo.font'
+  requires 'menlo for powerline.font'
 end

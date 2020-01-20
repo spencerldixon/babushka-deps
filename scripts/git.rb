@@ -1,12 +1,3 @@
-# Install git
-
-dep "install-git" do
-  met? { shell? "git help" }
-  meet { requires "git.bin" }
-end
-
-# Configure git methods
-
 dep "set-user-name" do
   met? { shell("git config user.name") == "Spencer Dixon" }
   meet { shell("git config --global user.name 'Spencer Dixon'")}
@@ -29,15 +20,15 @@ end
 
 dep "set-global-gitignore" do
   met? { !shell("git config --global core.excludesfile").blank? }
-  meet { 
+  meet {
     shell("cp ~/.babushka/sources/spencerldixon/gitignore_global.txt ~/.gitignore_global")
     shell("git config --global core.excludesfile ~/.gitignore_global" )
-    }
+  }
 end
 
 # Configure git
 
-dep "configure-git" do
+dep 'configure-git' do
   requires "set-user-name"
   requires "set-email"
   requires "set-core-editor"

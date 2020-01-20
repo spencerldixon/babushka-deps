@@ -28,9 +28,21 @@ dep "python.bin" do
   installs { via :brew, "python" }
 end
 
+dep "node.bin" do
+  installs { via :brew, "node@12" }
+end
+
+dep "redis.bin" do
+  installs { via :brew, "redis" }
+end
+
+dep 'mas' do
+  installs { via :brew, 'mas' }
+end
+
 # Install everything
 
-dep "all-packaged-apps" do
+dep 'install-brew-packages' do
   requires "vim.bin"
   requires "git.bin"
   requires "tmux.bin"
@@ -38,4 +50,7 @@ dep "all-packaged-apps" do
   requires "openssl.bin"
   requires "tree.bin"
   requires "python.bin"
+  requires "node.bin"
+  requires "redis.bin"
+  requires 'mas'
 end

@@ -1,6 +1,4 @@
 # OS X Settings
-# TODO
-# Set secondary click to bottom right corner
 
 dep "set-icon-size" do
   met? { shell("defaults read com.apple.dock tilesize") == "41" }
@@ -23,13 +21,6 @@ end
 dep "set-dark-mode" do
   met? { shell("defaults read ~/Library/Preferences/.GlobalPreferences.plist AppleInterfaceStyle") == "Dark"}
   meet { shell "defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleInterfaceStyle -string Dark" }
-end
-
-dep "set-background" do
-  meet {
-    shell "curl -o ~/Pictures/elliot.jpg http://imgh.us/elliotswallpaper.jpg"
-    shell "sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db \"update data set value = '~/Pictures/elliotswallpaper.jpg'\" && killall Dock  "
-  }
 end
 
 dep "evict-filevault" do
@@ -67,12 +58,11 @@ end
 
 # Install everything...
 
-dep "all-osx-settings" do
+dep "configure-osx-preferences" do
   requires "set-icon-size"
   requires "set-keyrepeat"
   requires "set-initial-key-repeat"
   requires "set-dark-mode"
-  requires "set-background"
   requires "evict-filevault"
   requires "enable-firewall"
   requires "disable-save-to-icloud"

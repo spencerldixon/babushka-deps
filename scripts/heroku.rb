@@ -1,12 +1,18 @@
-# Download and authenticate heroku toolbelt
+# Download and install heroku toolbelt
 
-dep "heroku-toolbelt" do
+dep 'heroku-toolbelt' do
   met? { shell? 'bash -c heroku'}
-  meet { shell "brew install heroku/brew/heroku" }
+  meet { shell 'brew install heroku/brew/heroku' }
+end
+
+dep 'heroku-accounts' do
+  met? { shell? 'heroku accounts' }
+  meet { shell 'heroku plugins:install heroku-accounts' }
 end
 
 # Install heroku
 
-dep "heroku-setup" do
-  requires "heroku-toolbelt"
+dep 'heroku-setup' do
+  requires 'heroku-toolbelt'
+  requires 'heroku-accounts'
 end

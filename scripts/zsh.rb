@@ -1,4 +1,3 @@
-
 dep "zsh.bin" do
   installs { via :brew, "zsh zsh-completions" }
 end

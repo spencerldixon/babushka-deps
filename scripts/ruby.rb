@@ -1,42 +1,14 @@
-# Install Xcode
-
-dep "install-xcode" do
-  met? { shell("xcode-select -p") == "/Applications/Xcode.app/Contents/Developer" }
-  meet { unmeetable! "Please install xcode" }
-end
-
-# Install Xcode's command line tools
-
-dep "install-command-line-tools" do
-  met? { shell? "gcc --version" }
-  meet { unmeetable! "Run 'xcode-select --install' to install gcc"}
-end
-
-# Configure git
-
-dep "install-and-configure-git" do
-  requires "install-git"
-  requires "configure-git"
-end
-
-# Install Homebrew (Babushka should already know how to do this, but just in case...)
-
-dep "install-brew" do
-  met? { shell? "brew help" }
-  meet { shell 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' }
-end
-
 # Install Ruby with RVM
 
-dep "install-rvm" do
+dep 'install-rvm' do
   met? { "~/.rvm/scripts/rvm".p.file? }
-  meet { shell '\curl -L https://get.rvm.io | bash -s stable --ruby' }
+  meet { shell '\curl -L https://get.rvm.io | bash -s stable' }
 end
 
 # Update RVM and gems
 
-dep "update-rvm-and-gems" do
-  met? { shell?("gem -v") && shell("gem -v") >= "2.4.8" }
+dep 'update-rvm-and-gems' do
+  met? { shell?("gem -v") && shell("gem -v") >= "2.5.0" }
   meet {
     shell "rvm get stable --autolibs=enable"
     shell "rvm install ruby --latest"
@@ -84,11 +56,7 @@ end
 
 # Install ruby and all dependencies
 
-dep "install-ruby-and-dependencies" do
-  requires "install-xcode"
-  requires "install-command-line-tools"
-  requires "install-and-configure-git"
-  requires "install-brew"
+dep 'install-rails' do
   requires "install-rvm"
   requires "update-rvm-and-gems"
   requires "no-documentation"

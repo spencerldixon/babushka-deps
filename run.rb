@@ -1,14 +1,15 @@
-# Install everything for the work environment
-
-dep "run" do
-  requires "all-packaged-apps"
-  requires "all-osx-apps"
-  requires "all-osx-settings"
-  requires "install-fonts"
-  requires "install-ruby-and-dependencies"
-  requires "heroku-setup"
-  requires "install-scm-breeze"
-  requires "install-dotfiles"
-  requires "install-zsh"
-  requires "finished-messages"
+dep 'run' do
+  requires 'install-homebrew'
+  requires 'install-brew-packages'
+  requires 'install-cask-applications'
+  requires 'install-xcode'
+  requires 'install-rails'
+  requires 'configure-git'
+  requires 'install-fonts'
+  requires 'heroku-setup'
+  requires 'install-dotfiles'
+  requires 'install-zsh'
+  requires 'install-scm-breeze'
+  requires 'configure-osx-preferences'
+  requires 'finished-messages'
 end
