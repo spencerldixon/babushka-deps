@@ -94,8 +94,8 @@ dep "spoofmac" do
 end
 
 dep 'helium' do
-  met? { shell 'brew cask list jadengeller-helium' }
-  meet { shell 'brew cask install jadengeller-helium' }
+  met? { '/Applications/Helium.app'.p.exist? }
+  meet { shell 'mas install 1054607607' }
 end
 
 dep 'protonvpn' do
