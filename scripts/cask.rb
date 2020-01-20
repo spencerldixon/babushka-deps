@@ -109,8 +109,8 @@ dep 'guitar pro' do
 end
 
 dep 'tor' do
-  met? { shell 'brew cask list tor' }
-  meet { shell 'brew cask install tor' }
+  met? { shell 'brew cask list tor-browser' }
+  meet { shell 'brew cask install tor-browser' }
 end
 
 # Install everything...
