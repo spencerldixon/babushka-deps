@@ -84,10 +84,10 @@ dep 'messenger' do
   meet { shell 'brew cask install messenger' }
 end
 
-dep 'dnscrypt' do
-  met? { shell 'brew cask list dnscrypt' }
-  meet { shell 'brew cask install dnscrypt' }
-end
+# dep 'dnscrypt' do
+  # met? { shell 'brew cask list dnscrypt' }
+  # meet { shell 'brew cask install dnscrypt' }
+# end
 
 dep "spoofmac" do
   meet { shell 'pip install SpoofMAC' }
@@ -132,7 +132,7 @@ dep 'install-cask-applications' do
   requires 'transmission'
   requires 'vlc'
   requires 'messenger'
-  requires 'dnscrypt'
+  # requires 'dnscrypt'
   requires 'spoofmac'
   requires 'helium'
   requires 'protonvpn'
