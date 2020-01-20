@@ -57,6 +57,7 @@ dep 'install-brew-packages' do
   requires "tree.bin"
   requires "python.bin"
   requires "node.bin"
+  requires 'wget.bin'
   requires 'redis'
   requires 'mas'
 end
