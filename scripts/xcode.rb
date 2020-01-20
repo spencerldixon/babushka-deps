@@ -8,8 +8,13 @@ dep 'xcode-cli-tools' do
   meet { shell 'xcode-select –-install' }
 end
 
+dep 'accept-license' do
+  meet { shell 'sudo xcodebuild -license accept' }
+end
+
 dep 'install-xcode' do
   requires 'xcode'
   requires 'xcode-cli-tools'
+  requires 'accept-license'
 end
 
