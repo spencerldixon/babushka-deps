@@ -33,11 +33,13 @@ dep "node.bin" do
 end
 
 dep "redis" do
-  installs { via :brew, "redis" }
+  met? { system 'redis-server --version' }
+  meet { shell 'brew install redis' }
 end
 
 dep 'mas' do
-  installs { via :brew, 'mas' }
+  met? { system('! brew info mas | grep "Not installed"') }
+  meet { shell 'brew install mas' }
 end
 
 # Install everything
@@ -51,6 +53,6 @@ dep 'install-brew-packages' do
   requires "tree.bin"
   requires "python.bin"
   requires "node.bin"
-  requires "redis"
+  requires 'redis'
   requires 'mas'
 end
