@@ -13,7 +13,7 @@ meta 'font' do
   accepts_list_for :ttf_filename
 
   template {
-    requires 'user font dir exists'
+    requires 'create fonts directory'
     prepare {
       #setup_source_uris
     }

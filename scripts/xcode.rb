@@ -5,16 +5,14 @@ end
 
 dep 'xcode-cli-tools' do
   met? { shell? "gcc --version" }
-  meet { shell 'xcode-select –-install' }
-end
-
-dep 'accept-license' do
-  meet { shell 'sudo xcodebuild -license accept' }
+  meet {
+    shell 'xcode-select –-install'
+    shell 'sudo xcodebuild -license accept'
+  }
 end
 
 dep 'install-xcode' do
   requires 'xcode'
   requires 'xcode-cli-tools'
-  requires 'accept-license'
 end
 
