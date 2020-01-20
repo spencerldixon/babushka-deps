@@ -6,10 +6,10 @@ dep 'iterm' do
   meet { shell 'brew cask install iterm2' }
 end
 
-dep 'sophos' do
-  met? { shell 'brew cask list sophos-anti-virus-home-edition' }
-  meet { shell 'brew cask install sophos-anti-virus-home-edition' }
-end
+# dep 'sophos' do
+  # met? { shell 'brew cask list sophos-anti-virus-home-edition' }
+  # meet { shell 'brew cask install sophos-anti-virus-home-edition' }
+# end
 
 dep 'sublime-text' do
   met? { shell 'brew cask list sublime-text' }
@@ -117,7 +117,7 @@ end
 
 dep 'install-cask-applications' do
   requires 'iterm'
-  requires 'sophos'
+  # requires 'sophos'
   requires 'sublime-text'
   requires 'slack'
   requires 'firefox'
