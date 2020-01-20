@@ -5,7 +5,7 @@ end
 
 dep 'xcode-cli-tools' do
   met? { shell? "gcc --version" }
-  meet { shell 'xcode-select –install' }
+  meet { shell 'xcode-select –-install' }
 end
 
 dep 'install-xcode' do
