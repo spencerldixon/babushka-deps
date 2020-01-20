@@ -32,6 +32,10 @@ dep "node.bin" do
   installs { via :brew, "node@12" }
 end
 
+dep "wget.bin" do
+  installs { via :brew, "wget" }
+end
+
 dep "redis" do
   met? { system 'redis-server --version' }
   meet { shell 'brew install redis' }

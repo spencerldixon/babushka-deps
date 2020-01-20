@@ -7,39 +7,26 @@ dep 'create fonts directory' do
   }
 end
 
-meta 'font' do
-  accepts_list_for :source
-  accepts_list_for :extra_source
-  accepts_list_for :ttf_filename
-
-  template {
-    requires 'create fonts directory'
-    prepare {
-      #setup_source_uris
-    }
-    met? {
-      "~/Library/Fonts/#{ttf_filename.first}".p.exists?
-    }
-    meet {
-      sources.each do |uri|
-        Resource.extract(uri) { Dir.glob("*.tt?"){|font| log_shell("Installing #{font}", "cp #{font} ~/Library/Fonts") } }
-      end
-    }
+fonts = [
+  {
+    ttf_filename: "MesloLGM-DZ-Regular.ttf",
+    source: 'http://github.com/downloads/andreberg/Meslo-Font/Meslo%20LG%20DZ%20v1.0.zip'
+  },
+  {
+    ttf_filename: 'Menlo-for-Powerline.ttf',
+    source: 'https://github.com/abertsch/Menlo-for-Powerline/blob/master/Menlo%20for%20Powerline.ttf'
   }
+]
+
+dep 'install meslo' do
+  fonts.each do |font|
+    met? { "~/Library/Fonts/#{font[:ttf_filename]}".p.exists? }
+    meet { shell "wget -O ~/Library/Fonts/#{font[:ttf_filename]} #{font[:source]}" }
+  end
 end
 
-dep 'meslo.font' do
-  source 'http://github.com/downloads/andreberg/Meslo-Font/Meslo%20LG%20DZ%20v1.0.zip'
-  ttf_filename "MesloLGM-DZ-Regular.ttf"
-end
-
-dep 'menlo for powerline.font' do
-  source 'https://gist.github.com/raw/1627888/c4e92f81f7956d4ceaee11b5a7b4c445f786dd90/Menlo-ForPowerline.ttc.zip'
-  ttf_filename 'Menlo-ForPowerline.ttc'
-end
 
 dep "install-fonts" do
   requires 'create fonts directory'
-  requires 'meslo.font'
-  requires 'menlo for powerline.font'
+  requires 'install meslo'
 end
