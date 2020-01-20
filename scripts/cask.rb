@@ -113,6 +113,11 @@ dep 'tor' do
   meet { shell 'brew cask install tor-browser' }
 end
 
+dep 'switchresx' do
+  met? { shell 'brew cask list switchresx' }
+  meet { shell 'brew cask install switchresx' }
+end
+
 # Install everything...
 
 dep 'install-cask-applications' do
@@ -138,4 +143,5 @@ dep 'install-cask-applications' do
   requires 'protonvpn'
   requires 'guitar pro'
   requires 'tor'
+  requires 'switchresx'
 end
