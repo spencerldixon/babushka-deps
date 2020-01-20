@@ -32,7 +32,7 @@ dep "node.bin" do
   installs { via :brew, "node@12" }
 end
 
-dep "redis.bin" do
+dep "redis" do
   installs { via :brew, "redis" }
 end
 
@@ -51,6 +51,6 @@ dep 'install-brew-packages' do
   requires "tree.bin"
   requires "python.bin"
   requires "node.bin"
-  requires "redis.bin"
+  requires "redis"
   requires 'mas'
 end
