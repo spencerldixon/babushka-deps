@@ -3,7 +3,7 @@ dep 'run' do
   requires 'install-brew-packages'
   requires 'install-cask-applications'
   requires 'install-xcode'
-  requires 'install-rails'
+  requires 'configure-rails-environment'
   requires 'configure-git'
   requires 'install-fonts'
   requires 'heroku-setup'

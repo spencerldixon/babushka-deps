@@ -56,7 +56,7 @@ end
 
 # Install ruby and all dependencies
 
-dep 'install-rails' do
+dep 'configure-rails-environment' do
   requires "install-rvm"
   requires "update-rvm-and-gems"
   requires "no-documentation"
