@@ -11,5 +11,6 @@ dep 'run' do
   requires 'install-zsh'
   requires 'install-scm-breeze'
   requires 'configure-osx-preferences'
+  requires 'generate-ssh-key'
   requires 'finished-messages'
 end

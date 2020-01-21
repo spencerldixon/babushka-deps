@@ -1,0 +1,17 @@
+# Mac OS X hidden files
+*.DS_Store
+*.DS_Store?
+
+# Vim files
+.*.sw?
+*~
+
+# Logs and databases #
+*.log
+*.sql
+*.sqlite
+
+# Thumbnails
+._*
+
+

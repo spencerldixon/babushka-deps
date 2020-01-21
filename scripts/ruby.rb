@@ -27,7 +27,7 @@ end
 # Install bundler
 
 dep "install-bundler" do
-  met? { shell? "bundler help" }
+  met? { system "bundle help" }
   meet { shell "sudo gem install bundler" }
 end
 

@@ -118,6 +118,11 @@ dep 'switchresx' do
   meet { shell 'brew cask install switchresx' }
 end
 
+# dep 'prey' do
+  # met? { shell 'brew cask list prey' }
+  # meet { shell 'brew cask install prey' }
+# end
+
 # Install everything...
 
 dep 'install-cask-applications' do
@@ -144,4 +149,5 @@ dep 'install-cask-applications' do
   requires 'guitar pro'
   requires 'tor'
   requires 'switchresx'
+  # requires 'prey'
 end
