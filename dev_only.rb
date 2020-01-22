@@ -1,0 +1,16 @@
+dep 'dev_only' do
+  requires 'install-homebrew'
+  requires 'install-brew-packages'
+  # requires 'install-cask-applications'
+  # requires 'install-xcode'
+  requires 'configure-rails-environment'
+  # requires 'configure-git'
+  requires 'install-fonts'
+  # requires 'heroku-setup'
+  requires 'install-dotfiles'
+  requires 'install-zsh'
+  requires 'install-scm-breeze'
+  # requires 'configure-osx-preferences'
+  # requires 'generate-ssh-key'
+  # requires 'finished-messages'
+end
