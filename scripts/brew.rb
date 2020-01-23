@@ -36,6 +36,11 @@ dep "wget.bin" do
   installs { via :brew, "wget" }
 end
 
+dep "the_silver_searcher" do
+  met? { system 'ag require' }
+  meet { shell 'brew install the_silver_searcher' }
+end
+
 dep "redis" do
   met? { system 'redis-server --version' }
   meet { shell 'brew install redis' }
@@ -60,4 +65,5 @@ dep 'install-brew-packages' do
   requires 'wget.bin'
   requires 'redis'
   requires 'mas'
+  requires 'the_silver_searcher'
 end
