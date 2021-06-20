@@ -1,5 +1,5 @@
 dep 'install-homebrew' do
-  meet { shell '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' }
+  meet { shell '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' }
 end
 
 dep "vim.bin" do
