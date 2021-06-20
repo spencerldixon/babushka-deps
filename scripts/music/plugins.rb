@@ -16,7 +16,7 @@ dep 'spitfire-audio' do
   meet { shell 'brew cask install spitfire-audio' }
 end
 
-dep 'music/plugins' do
+dep 'music-plugins' do
   requires 'native-access'
   requires 'spitfire-audio'
 end

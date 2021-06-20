@@ -23,14 +23,14 @@ dep 'full' do
   requires 'dev'
 
   # Install additional deps
-  requires 'apps/apps-full'
+  requires 'apps-apps-full'
 
   # Installs ableton and music stuff
-  requires 'music/apps'
-  requires 'music/plugins'
+  requires 'music-apps'
+  requires 'music-plugins'
 
   # Sets up OSX preferences
-  requires 'osx/osx'
+  requires 'osx-osx'
 
   # Finished messages and checklist
   requires 'finished-messages'

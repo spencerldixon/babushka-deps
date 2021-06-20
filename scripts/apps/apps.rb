@@ -128,7 +128,7 @@ dep 'elgato' do
 end
 
 # Minimal install, suitable for leased machines / work laptops
-dep 'apps/apps-minimal' do
+dep 'apps-apps-minimal' do
   requires 'notion'
   requires 'firefox'
   requires 'spectacle'
@@ -140,7 +140,7 @@ dep 'apps/apps-minimal' do
 end
 
 # Full install suitable for personal machines
-dep 'apps/apps-full' do
+dep 'apps-apps-full' do
   requires 'apps-minimal'
   requires 'music/apps'
   requires 'hey'

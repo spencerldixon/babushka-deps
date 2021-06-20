@@ -13,7 +13,7 @@ dep 'ladiocast' do
   meet { shell 'mas install 411213048' }
 end
 
-dep 'music/apps' do
+dep 'music-apps' do
   requires 'ableton'
   requires 'guitar pro'
   requires 'ladiocast'
