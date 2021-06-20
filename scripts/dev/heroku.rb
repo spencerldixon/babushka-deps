@@ -12,7 +12,7 @@ end
 
 # Install heroku
 
-dep 'heroku-setup' do
+dep 'heroku' do
   requires 'heroku-toolbelt'
   requires 'heroku-accounts'
 end

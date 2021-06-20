@@ -58,7 +58,7 @@ end
 
 # Install everything...
 
-dep "configure-osx-preferences" do
+dep "osx/osx" do
   requires "set-icon-size"
   requires "set-keyrepeat"
   requires "set-initial-key-repeat"

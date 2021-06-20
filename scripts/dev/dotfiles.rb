@@ -1,4 +1,4 @@
-dep "install-vundle-for-vim" do
+dep "vundle" do
   met? { "~/.vim/bundle/Vundle.vim".p.dir? }
   meet {
     shell "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
@@ -6,12 +6,12 @@ dep "install-vundle-for-vim" do
   }
 end
 
-dep "install-tpm" do
+dep "tpm" do
   met? { "~/.tmux/plugins/tpm".p.dir? }
   meet { shell "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" }
 end
 
-dep "install-dotfiles-from-github" do
+dep "install-dotfiles" do
   met? { "~/dotfiles".p.dir? }
   meet {
     shell "cd ~"
@@ -24,8 +24,8 @@ end
 
 # Install everything
 
-dep "install-dotfiles" do
-  requires "install-vundle-for-vim"
-  requires "install-tpm"
-  requires "install-dotfiles-from-github"
+dep "dotfiles" do
+  requires "vundle"
+  requires "tpm"
+  requires "install-dotfiles"
 end

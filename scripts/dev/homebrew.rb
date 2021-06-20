@@ -1,4 +1,6 @@
-# Everything installed via Homebrew goes here
+dep 'install-homebrew' do
+  meet { shell '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' }
+end
 
 dep "vim.bin" do
   installs { via :brew, "vim" }
@@ -53,7 +55,8 @@ end
 
 # Install everything
 
-dep 'install-brew-packages' do
+dep 'homebrew' do
+  requires "install-homebrew"
   requires "vim.bin"
   requires "git.bin"
   requires "tmux.bin"

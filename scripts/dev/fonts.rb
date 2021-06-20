@@ -26,7 +26,7 @@ dep 'install meslo' do
 end
 
 
-dep "install-fonts" do
+dep "fonts" do
   requires 'create fonts directory'
   requires 'install meslo'
 end

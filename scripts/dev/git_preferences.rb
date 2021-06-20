@@ -26,7 +26,7 @@ end
 
 # Configure git
 
-dep 'configure-git' do
+dep 'git-preferences' do
   requires "set-user-name"
   requires "set-email"
   requires "set-core-editor"
