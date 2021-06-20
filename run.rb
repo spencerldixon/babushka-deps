@@ -2,8 +2,8 @@
 # Use for a minimalist setup on leased laptops
 
 dep 'dev' do
-  requires 'xcode'
   requires 'homebrew'
+  requires 'xcode'
   requires 'ruby'
   requires 'git_preferences'
   requires 'fonts'
