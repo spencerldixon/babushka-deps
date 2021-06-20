@@ -31,7 +31,7 @@ dep "python.bin" do
 end
 
 dep "node.bin" do
-  installs { via :brew, "node@12" }
+  installs { via :brew, "node" }
 end
 
 dep "wget.bin" do
