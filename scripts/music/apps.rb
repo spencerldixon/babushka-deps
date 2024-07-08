@@ -8,13 +8,7 @@ dep 'guitar pro' do
   meet { shell 'brew cask install guitar-pro' }
 end
 
-dep 'ladiocast' do
-  met? { '/Applications/LadioCast.app'.p.exist? }
-  meet { shell 'mas install 411213048' }
-end
-
 dep 'music-apps' do
   requires 'ableton'
   requires 'guitar pro'
-  requires 'ladiocast'
 end

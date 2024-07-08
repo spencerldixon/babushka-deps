@@ -48,14 +48,6 @@ dep "disable-captive-portal" do
   }
 end
 
-dep "disable-save-to-icloud" do
-  # Disable saving files to iCloud by default
-  meet {
-    shell "defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false"
-  }
-end
-
-
 # Install everything...
 
 dep "osx-osx" do
@@ -65,5 +57,4 @@ dep "osx-osx" do
   requires "set-dark-mode"
   requires "evict-filevault"
   requires "enable-firewall"
-  requires "disable-save-to-icloud"
 end

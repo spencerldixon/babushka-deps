@@ -2,129 +2,114 @@
 # You can also fetch apps from the appstore with MAS (https://github.com/mas-cli/mas)
 
 dep 'iterm' do
-  met? { shell 'brew cask list iterm2' }
-  meet { shell 'brew cask install iterm2' }
+  met? { shell 'brew list iterm2' }
+  meet { shell 'brew install iterm2' }
 end
 
 dep 'sublime' do
-  met? { shell 'brew cask list sublime-text' }
-  meet { shell 'brew cask install sublime-text' }
+  met? { shell 'brew list sublime-text' }
+  meet { shell 'brew install sublime-text' }
 end
 
 dep 'slack' do
-  met? { shell 'brew cask list slack' }
-  meet { shell 'brew cask install slack' }
+  met? { shell 'brew list slack' }
+  meet { shell 'brew install slack' }
 end
 
 dep 'firefox' do
-  met? { shell 'brew cask list firefox' }
-  meet { shell 'brew cask install firefox' }
-end
-
-dep 'skype' do
-  met? { shell 'brew cask list skype' }
-  meet { shell 'brew cask install skype' }
+  met? { shell 'brew list firefox' }
+  meet { shell 'brew install firefox' }
 end
 
 dep 'spotify' do
-  met? { shell 'brew cask list spotify' }
-  meet { shell 'brew cask install spotify' }
+  met? { shell 'brew list spotify' }
+  meet { shell 'brew install spotify' }
 end
 
 dep 'spectacle' do
-  met? { shell 'brew cask list spectacle' }
-  meet { shell 'brew cask install spectacle' }
+  met? { shell 'brew list spectacle' }
+  meet { shell 'brew install spectacle' }
 end
 
 dep 'postgresql' do
-  met? { shell 'brew cask list postgres' }
-  meet { shell 'brew cask install postgres' }
-end
-
-dep 'evernote' do
-  met? { shell 'brew cask list evernote' }
-  meet { shell 'brew cask install evernote' }
+  met? { shell 'brew list postgres' }
+  meet { shell 'brew install postgres' }
 end
 
 dep 'veracrypt' do
-  met? { shell 'brew cask list veracrypt' }
+  met? { shell 'brew list veracrypt' }
   meet {
-    shell "brew cask install osxfuse"
-    shell "brew cask install veracrypt"
+    shell "brew install osxfuse"
+    shell "brew install veracrypt"
   }
 end
 
 dep 'sync' do
-  met? { shell 'brew cask list sync' }
-  meet { shell 'brew cask install sync' }
+  met? { shell 'brew list sync' }
+  meet { shell 'brew install sync' }
 end
 
 dep 'transmission' do
-  met? { shell 'brew cask list transmission' }
-  meet { shell 'brew cask install transmission' }
+  met? { shell 'brew list transmission' }
+  meet { shell 'brew install transmission' }
 end
 
 dep 'vlc' do
-  met? { shell 'brew cask list vlc' }
-  meet { shell 'brew cask install vlc' }
+  met? { shell 'brew list vlc' }
+  meet { shell 'brew install vlc' }
 end
-
-dep "spoofmac" do
-  meet { shell 'pip install SpoofMAC' }
-end
+#
+# dep "spoofmac" do
+  # meet { shell 'pip install SpoofMAC' }
+# end
 
 dep 'tor' do
-  met? { shell 'brew cask list tor-browser' }
-  meet { shell 'brew cask install tor-browser' }
-end
-
-dep 'prey' do
-  met? { shell 'brew cask list prey' }
-  meet { shell 'brew cask install prey' }
+  met? { shell 'brew list tor-browser' }
+  meet { shell 'brew install tor-browser' }
 end
 
 dep 'hey' do
-  met? { shell 'brew cask list hey' }
-  meet { shell 'brew cask install hey' }
+  met? { shell 'brew list hey' }
+  meet { shell 'brew install hey' }
 end
 
 dep 'notion' do
-  met? { shell 'brew cask list notion' }
-  meet { shell 'brew cask install notion' }
-end
-
-dep 'runcat' do
-  met? { '/Applications/RunCat.app'.p.exist? }
-  meet { shell 'mas install 1429033973' }
+  met? { shell 'brew list notion' }
+  meet { shell 'brew install notion' }
 end
 
 dep 'discord' do
-  met? { shell 'brew cask list discord' }
-  meet { shell 'brew cask install discord' }
+  met? { shell 'brew list discord' }
+  meet { shell 'brew install discord' }
 end
 
 dep 'signal' do
-  met? { shell 'brew cask list signal' }
-  meet { shell 'brew cask install signal' }
+  met? { shell 'brew list signal' }
+  meet { shell 'brew install signal' }
 end
 
 dep 'zoom' do
-  met? { shell 'brew cask list zoom' }
-  meet { shell 'brew cask install zoom' }
+  met? { shell 'brew list zoom' }
+  meet { shell 'brew install zoom' }
 end
 
 dep 'malwarebytes' do
-  met? { shell 'brew cask list malwarebytes' }
-  meet { shell 'brew cask install malwarebytes' }
+  met? { shell 'brew list malwarebytes' }
+  meet { shell 'brew install malwarebytes' }
 end
 
 dep 'mullvad' do
-  met? { shell 'brew cask list mullvadvpn' }
-  meet { shell 'brew cask install mullvadvpn' }
+  met? { shell 'brew list mullvadvpn' }
+  meet { shell 'brew install mullvadvpn' }
 end
 
 dep 'elgato' do
   source "https://edge.elgato.com/egc/macos/eccm/1.1.4/Control_Center_1.1.4.10368.zip"
+end
+
+dep 'docker' do
+  met? { shell 'brew list docker'}
+  meet { shell 'brew install docker'}
 end
 
 # Minimal install, suitable for leased machines / work laptops
@@ -135,8 +120,8 @@ dep 'apps-apps-minimal' do
   requires 'iterm'
   requires 'sublime'
   requires 'postgres'
-  requires 'runcat'
   requires 'spotify'
+  requires 'docker'
 end
 
 # Full install suitable for personal machines
@@ -149,7 +134,6 @@ dep 'apps-apps-full' do
   requires 'tor'
   requires 'signal'
   requires 'vlc'
-  requires 'evernote'
   requires 'sync'
   requires 'veracrypt'
   requires 'zoom'
@@ -157,5 +141,4 @@ dep 'apps-apps-full' do
   requires 'mullvad'
   requires 'elgato'
   requires 'transmission'
-  requires 'prey'
 end

@@ -1,8 +1,8 @@
-dep "vundle" do
-  met? { "~/.vim/bundle/Vundle.vim".p.dir? }
+dep "vim-plug" do
+  met? { "~/.vim/autoload/plug.vim".p.dir? }
   meet {
-    shell "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
-    shell "vim +PluginInstall +qall"
+    shell "wget https://github.com/junegunn/vim-plug/blob/master/plug.vim -O ~/.vim/autoload/plug.vim"
+    shell "vim +PlugInstall +qall"
   }
 end
 
@@ -25,7 +25,7 @@ end
 # Install everything
 
 dep "dotfiles" do
-  requires "vundle"
+  requires "vim-plug"
   requires "tpm"
   requires "install-dotfiles"
 end

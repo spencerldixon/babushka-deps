@@ -9,8 +9,8 @@ dep "set-email" do
 end
 
 dep "set-core-editor" do
-  met? { shell("git config core.editor") == "vim" }
-  meet { shell("git config --global core.editor 'vim'") }
+  met? { shell("git config core.editor") == "neovim" }
+  meet { shell("git config --global core.editor 'neovim'") }
 end
 
 dep "set-push-default" do
