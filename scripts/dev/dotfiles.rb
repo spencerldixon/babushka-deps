@@ -15,7 +15,7 @@ dep "install-dotfiles" do
   met? { "~/dotfiles".p.dir? }
   meet {
     shell "cd ~"
-    shell "git clone git://github.com/spencerldixon/dotfiles.git"
+    shell "git clone https://github.com/spencerldixon/dotfiles.git"
     shell "cd ~/dotfiles"
     shell "chmod +x install.sh"
     shell "./install.sh"
