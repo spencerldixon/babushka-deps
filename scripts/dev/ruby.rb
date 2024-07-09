@@ -55,7 +55,7 @@ dep "create-rails-projects-folder" do
 end
 
 dep "mise" do
-  met? { "~/.local/bin/mise".p.dir? }
+  met? { shell? "~/.local/bin/mise --version" }
   meet { shell "curl https://mise.run | sh" }
 end
 
