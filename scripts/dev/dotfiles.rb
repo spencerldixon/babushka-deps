@@ -2,7 +2,8 @@ dep "vim-plug" do
   met? { "~/.vim/autoload/plug.vim".p.exists? }
   meet {
     shell "mkdir -p ~/.vim/autoload"
-    shell "wget https://github.com/junegunn/vim-plug/blob/master/plug.vim -O ~/.vim/autoload/plug.vim"
+    shell "wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.vim/autoload/plug.vim"
+    shell "vim +PlugInstall +qall"
   }
 end
 
