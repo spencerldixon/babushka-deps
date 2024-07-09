@@ -3,27 +3,33 @@ dep 'install-homebrew' do
 end
 
 dep "vim.bin" do
-  installs { via :brew, "vim" }
+  met? { shell "brew list vim" }
+  meet { shell "brew install vim" }
 end
 
 dep "neovim.bin" do
-  installs { via :brew, "neovim" }
+  met? { shell "brew list neovim" }
+  meet { shell "brew install neovim" }
 end
 
 dep "git.bin" do
-  installs { via :brew, "git" }
+  met? { shell "brew list git" }
+  meet { shell "brew install git" }
 end
 
 dep "tmux.bin" do
-  installs { via :brew, "tmux" }
+  met? { shell "brew list tmux" }
+  meet { shell "brew install tmux" }
 end
 
 dep "openssl.bin" do
-  installs { via :brew, "openssl" }
+  met? { shell "brew list openssl" }
+  meet { shell "brew install openssl" }
 end
 
 dep "wget.bin" do
-  installs { via :brew, "wget" }
+  met? { shell "brew list wget" }
+  meet { shell "brew install wget" }
 end
 
 dep "redis" do
