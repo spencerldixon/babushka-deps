@@ -26,9 +26,9 @@ dep 'spotify' do
   meet { shell 'brew install spotify' }
 end
 
-dep 'spectacle' do
-  met? { shell? 'brew list spectacle' }
-  meet { shell 'brew install spectacle' }
+dep 'rectangle' do
+  met? { shell? 'brew list rectangle' }
+  meet { shell 'brew install --cask rectangle' }
 end
 
 dep 'postgresql' do
@@ -116,7 +116,7 @@ end
 dep 'apps-apps-minimal' do
   requires 'notion'
   requires 'firefox'
-  requires 'spectacle'
+  requires 'rectangle'
   requires 'iterm'
   requires 'sublime'
   requires 'postgresql'
