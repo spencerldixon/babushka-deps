@@ -1,5 +1,5 @@
 dep 'install nerd font' do
-  met? { false }
+  met? { shell? "brew list font-meslo-lg-nerd-font" }
   meet { shell "brew install --cask font-meslo-lg-nerd-font" }
 end
 
