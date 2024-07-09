@@ -24,7 +24,7 @@ dep "openssl.bin" do
 end
 
 dep "wget" do
-  met? { shell? "brew list wget" }
+  met? { system "brew list wget" }
   meet { shell "brew install wget" }
 end
 
