@@ -11,7 +11,7 @@ dep 'dev' do
   requires 'dotfiles'
   requires 'scm_breeze'
   requires 'heroku'
-  requires 'apps/apps-minimal'
+  requires 'apps-apps-minimal'
 
   puts "🎉 Dev environment installed"
 end
