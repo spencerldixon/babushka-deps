@@ -23,8 +23,9 @@ dep "openssl.bin" do
   installs { via :brew, "openssl" }
 end
 
-dep "wget.bin" do
-  installs { via :brew, "wget" }
+dep "wget" do
+  met? { shell? "brew list wget" }
+  meet { shell "brew install wget" }
 end
 
 dep "redis" do
@@ -45,7 +46,7 @@ dep 'homebrew' do
   requires "git.bin"
   requires "tmux.bin"
   requires "openssl.bin"
-  requires 'wget.bin'
+  requires 'wget'
   requires 'redis'
   requires 'mas'
 end
