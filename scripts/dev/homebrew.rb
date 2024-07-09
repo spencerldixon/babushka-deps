@@ -1,35 +1,30 @@
 dep 'install-homebrew' do
+  met? { system 'brew -v' }
   meet { shell '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' }
 end
 
 dep "vim.bin" do
-  met? { shell "brew list vim" }
-  meet { shell "brew install vim" }
+  installs { via :brew, "vim" }
 end
 
 dep "neovim.bin" do
-  met? { shell "brew list neovim" }
-  meet { shell "brew install neovim" }
+  installs { via :brew, "neovim" }
 end
 
 dep "git.bin" do
-  met? { shell "brew list git" }
-  meet { shell "brew install git" }
+  installs { via :brew, "git" }
 end
 
 dep "tmux.bin" do
-  met? { shell "brew list tmux" }
-  meet { shell "brew install tmux" }
+  installs { via :brew, "tmux" }
 end
 
 dep "openssl.bin" do
-  met? { shell "brew list openssl" }
-  meet { shell "brew install openssl" }
+  installs { via :brew, "openssl" }
 end
 
 dep "wget.bin" do
-  met? { shell "brew list wget" }
-  meet { shell "brew install wget" }
+  installs { via :brew, "wget" }
 end
 
 dep "redis" do
