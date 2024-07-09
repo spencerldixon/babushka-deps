@@ -32,8 +32,8 @@ dep 'spectacle' do
 end
 
 dep 'postgresql' do
-  met? { shell? 'brew list postgres' }
-  meet { shell 'brew install postgres' }
+  met? { shell? 'brew list postgresql' }
+  meet { shell 'brew install postgresql' }
 end
 
 dep 'veracrypt' do
@@ -119,7 +119,7 @@ dep 'apps-apps-minimal' do
   requires 'spectacle'
   requires 'iterm'
   requires 'sublime'
-  requires 'postgres'
+  requires 'postgresql'
   requires 'spotify'
   requires 'docker'
   requires 'mullvad'
