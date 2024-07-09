@@ -1,8 +1,3 @@
-dep 'install-xcode' do
-  met? { shell("xcode-select -p") == "/Applications/Xcode.app/Contents/Developer" }
-  meet { shell 'mas install 497799835' }
-end
-
 dep 'xcode-cli-tools' do
   met? { shell? "gcc --version" }
   meet {
@@ -12,7 +7,6 @@ dep 'xcode-cli-tools' do
 end
 
 dep 'xcode' do
-  requires 'install-xcode'
   requires 'xcode-cli-tools'
 end
 
