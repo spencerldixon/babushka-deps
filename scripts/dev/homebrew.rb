@@ -1,5 +1,5 @@
 dep 'install-homebrew' do
-  met? { system 'brew -v' }
+  met? { "/opt/homebrew".p.dir? }
   meet { shell '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' }
 end
 

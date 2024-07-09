@@ -54,14 +54,20 @@ dep "create-rails-projects-folder" do
   meet { log_shell "Creating ~/Rails", "mkdir ~/Rails" }
 end
 
+dep "mise" do
+  met? { "~/.local/bin/mise".p.dir? }
+  meet { shell "curl https://mise.run | sh" }
+end
+
 # Install ruby and all dependencies
 
 dep 'ruby' do
-  requires "rvm"
-  requires "update-rvm-and-gems"
-  requires "no-documentation"
-  requires "bundler"
-  requires "nokogiri"
-  requires "rails"
+  # requires "rvm"
+  # requires "update-rvm-and-gems"
+  # requires "no-documentation"
+  # requires "bundler"
+  # requires "nokogiri"
+  # requires "rails"
+  requires "mise"
   requires "create-rails-projects-folder"
 end
