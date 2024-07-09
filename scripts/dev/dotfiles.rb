@@ -1,6 +1,7 @@
 dep "vim-plug" do
   met? { "~/.vim/autoload/plug.vim".p.dir? }
   meet {
+    shell "mkdir ~/.vim/autoload"
     shell "wget https://github.com/junegunn/vim-plug/blob/master/plug.vim -O ~/.vim/autoload/plug.vim"
     shell "vim +PlugInstall +qall"
   }
