@@ -22,6 +22,15 @@ babushka spencerldixon:dev
 
 Put the kettle on, kick back and wait for Babushka to finish installing everything!
 
+## Refetching the repo
+
+If your install breaks and you need to change something, you need to remove the source from babushka to prompt it to refetch the repo, or it'll just try to run the local copy again.
+
+```
+sudo rm -rf /var/root/.babushka/sources/spencerldixon
+rm -rf ~/.babushka/sources/spencerldixon
+```
+
 ## Security settings
 
 Security tweaks based on: ```https://github.com/drduh/OS-X-Security-and-Privacy-Guide```
