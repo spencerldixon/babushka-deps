@@ -22,10 +22,18 @@ dep "install-dotfiles" do
   }
 end
 
+def "install-neovim" do
+  met? { "~/.config/nvim".p.dir? }
+  meet? {
+    shell 'git clone https://github.com/spencerldixon/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim'
+  }
+end
+
 # Install everything
 
 dep "dotfiles" do
   requires "vim-plug"
   requires "tpm"
   requires "install-dotfiles"
+  requires "install-neovim"
 end
