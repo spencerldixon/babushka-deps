@@ -15,6 +15,14 @@ dep "git.bin" do
   installs { via :brew, "git" }
 end
 
+dep "gh.bin" do
+  installs { via :brew, "gh" }
+end
+
+dep "stow.bin" do
+  installs { via :brew, "stow" }
+end
+
 dep "tmux.bin" do
   installs { via :brew, "tmux" }
 end
@@ -47,5 +55,7 @@ dep 'homebrew' do
   requires "openssl.bin"
   requires 'wget.bin'
   requires 'redis'
+  requires 'stow'
+  requires 'gh'
   requires 'mas'
 end
